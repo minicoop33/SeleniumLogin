@@ -6,39 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
-def wrongUsername(driver):
-    # Test with wrong username and correct password
-    driver.find_element_by_id("relogin_user").send_keys("WrongUser")
-    driver.find_element_by_id("relogin_password").send_keys("Testpass1")
-    # Attempt to login
-    loginbtn = driver.find_element_by_id("admin-login-btn")
-    loginbtn.click()
-    time.sleep(2)
-
-def wrongPassword(driver):
-    # Test with correct username and wrong password
-    driver.find_element_by_id("relogin_user").send_keys("TestUser")
-    driver.find_element_by_id("relogin_password").send_keys("Wrongpass1")
-    # Attempt to login
-    loginbtn = driver.find_element_by_id("admin-login-btn")
-    loginbtn.click()
-    time.sleep(2)
-  
-def wrongUsernameAndPassword(driver):
-    # Test with wrong username and wrong password
-    driver.find_element_by_id("relogin_user").send_keys("WrongUser")
-    driver.find_element_by_id("relogin_password").send_keys("Wrongpass1")
-    # Attempt to login
-    loginbtn = driver.find_element_by_id("admin-login-btn")
-    loginbtn.click()
-    time.sleep(2)
-
-def noCredentialsEntered(driver):
-    # Test without entering any credentials
-    loginbtn = driver.find_element_by_id("admin-login-btn")
-    loginbtn.click()
-    time.sleep(2)  
-
 def correctCredentials(driver):
     # Test with correct username and password
     driver.find_element_by_id("relogin_user").send_keys("TestUser")
